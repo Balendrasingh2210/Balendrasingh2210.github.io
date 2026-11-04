@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://balendrasingh2210.github.io/sitemap.xml

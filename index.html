@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Balendra Singh | Full-Stack Developer, M.Tech IT at IIIT Allahabad</title>
+  <meta name="description" content="Balendra Singh is a full-stack developer (React, Node.js, MongoDB) and M.Tech IT student at IIIT Allahabad. See his projects ChessLens and AI Interview Prep, skills and resume.">
+  <meta name="author" content="Balendra Singh">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://balendrasingh2210.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Balendra Singh | Full-Stack Developer, IIIT Allahabad">
+  <meta property="og:description" content="Full-stack developer and M.Tech IT student at IIIT Allahabad. Projects: ChessLens chess analytics and AI Interview Prep.">
+  <meta property="og:url" content="https://balendrasingh2210.github.io/">
+  <meta property="og:image" content="https://balendrasingh2210.github.io/og-image.png">
+  <meta property="og:image:alt" content="Balendra Singh, full-stack developer portfolio">
+  <meta property="og:locale" content="en_IN">
+  <meta property="profile:first_name" content="Balendra">
+  <meta property="profile:last_name" content="Singh">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Structured data for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "dateModified": "2026-11-04",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Balendra Singh",
+      "jobTitle": "Full-Stack Developer",
+      "description": "M.Tech Information Technology student at IIIT Allahabad and full-stack developer working with React, Node.js, Express and MongoDB.",
+      "url": "https://balendrasingh2210.github.io/",
+      "email": "mailto:Balendrasingh310813@gmail.com",
+      "address": {"@type": "PostalAddress", "addressLocality": "Prayagraj", "addressRegion": "Uttar Pradesh", "addressCountry": "IN"},
+      "alumniOf": [
+        {"@type": "CollegeOrUniversity", "name": "Indian Institute of Information Technology, Allahabad"},
+        {"@type": "CollegeOrUniversity", "name": "JSS Academy of Technical Education, Noida"}
+      ],
+      "knowsAbout": ["Full-stack web development", "React", "Node.js", "Express.js", "MongoDB", "Redis", "Data Structures and Algorithms", "Machine Learning", "PyTorch"],
+      "sameAs": [
+        "https://github.com/Balendrasingh2210",
+        "https://www.linkedin.com/in/balendra-singh-3b35751b8/",
+        "https://codolio.com/profile/Balendra22"
+      ]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #172033;
+      --paper: #FAFAF7;
+      --board-dark: #6F8F4E;
+      --board-light: #E9EDD3;
+      --muted: #55606F;
+      --rule: #D9DCD2;
+      --display: "Bricolage Grotesque", system-ui, sans-serif;
+      --text: "Source Serif 4", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--text);
+      font-size: 1.125rem;
+      line-height: 1.65;
+    }
+    a { color: var(--ink); text-decoration-color: var(--board-dark); text-underline-offset: 3px; text-decoration-thickness: 2px; }
+    a:hover { color: var(--board-dark); }
+    a:focus-visible { outline: 3px solid var(--board-dark); outline-offset: 3px; }
+    .skip { position: absolute; left: -9999px; }
+    .skip:focus { left: 16px; top: 16px; background: var(--ink); color: var(--paper); padding: 8px 12px; }
+
+    header.site, main, footer {
+      max-width: 46rem;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    header.site nav {
+      display: flex; flex-wrap: wrap; gap: 6px 22px;
+      padding: 22px 0;
+      font-family: var(--display); font-size: 1rem;
+    }
+    header.site nav a { text-decoration: none; }
+    header.site nav a:hover { text-decoration: underline; }
+
+    h1, h2, h3 { font-family: var(--display); line-height: 1.15; margin: 0; }
+
+    /* Hero: the one bold element, a chessboard file of squares under the name */
+    .hero { padding: 56px 0 40px; }
+    .hero h1 { font-size: clamp(2.6rem, 9vw, 4.6rem); font-weight: 700; letter-spacing: -0.02em; }
+    .board {
+      height: 22px; margin: 18px 0 26px;
+      width: min(100%, 352px);
+      background: repeating-linear-gradient(90deg, var(--board-dark) 0 22px, var(--board-light) 22px 44px);
+      border: 2px solid var(--ink);
+    }
+    .hero p.lede { font-size: 1.3rem; max-width: 34em; margin: 0 0 22px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      font-family: var(--display); font-size: 1rem; font-weight: 500;
+      display: inline-block; padding: 10px 18px; text-decoration: none;
+      border: 2px solid var(--ink);
+    }
+    .btn.primary { background: var(--ink); color: var(--paper); }
+    .btn.primary:hover { background: var(--board-dark); border-color: var(--board-dark); color: var(--paper); }
+
+    section { padding: 36px 0; border-top: 1px solid var(--rule); }
+    section > h2 { font-size: 1.75rem; margin-bottom: 18px; }
+    h3 { font-size: 1.3rem; }
+
+    .project { margin-bottom: 34px; }
+    .project:last-child { margin-bottom: 0; }
+    .project .meta { font-family: var(--display); font-size: 0.95rem; color: var(--muted); margin: 4px 0 10px; }
+    .project figure { margin: 12px 0; }
+    .project img { width: 100%; height: auto; border: 2px solid var(--ink); display: block; }
+    .project figcaption { font-size: 0.9rem; color: var(--muted); margin-top: 6px; }
+    .project ul { padding-left: 1.2em; margin: 8px 0; }
+    .project li { margin-bottom: 6px; }
+    .links a { font-family: var(--display); font-size: 1rem; margin-right: 18px; }
+
+    dl.skills { display: grid; grid-template-columns: 11rem 1fr; gap: 8px 18px; margin: 0; }
+    dl.skills dt { font-family: var(--display); font-weight: 500; }
+    dl.skills dd { margin: 0; }
+    @media (max-width: 560px) {
+      dl.skills { grid-template-columns: 1fr; gap: 2px; }
+      dl.skills dd { margin-bottom: 12px; }
+    }
+
+    .entry { margin-bottom: 18px; }
+    .entry p { margin: 2px 0; }
+    .entry .when { color: var(--muted); font-size: 1rem; }
+
+    address { font-style: normal; }
+    footer { padding: 28px 16px 40px; color: var(--muted); font-size: 0.95rem; border-top: 1px solid var(--rule); }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site">
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="name" style="border-top:0">
+      <h1 id="name">Balendra Singh</h1>
+      <div class="board" aria-hidden="true"></div>
+      <p class="lede">Full-stack developer and M.Tech Information Technology student at IIIT Allahabad. I build web applications with React, Node.js and MongoDB, and I have shipped and deployed three production full-stack projects.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-h">
+      <h2 id="about-h">About me</h2>
+      <p>I am in the 2025–2027 M.Tech IT batch at the Indian Institute of Information Technology, Allahabad (CGPA 8.00), after a B.Tech in Electrical and Electronics Engineering from JSS Academy of Technical Education, Noida.</p>
+      <p>Most of my work is backend-heavy web development: authentication, background job queues, and integrating third-party APIs and large language models into real products. Alongside that, I research identity-preserving face-to-anime image translation for my M.Tech thesis, and I have solved more than 700 data structures and algorithms problems (LeetCode rating 1784).</p>
+      <p>I am open to software engineering, backend, full-stack and ML engineering roles in India, on-site, hybrid or remote.</p>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-h">
+      <h2 id="projects-h">Projects</h2>
+
+      <article class="project" aria-labelledby="p-chesslens">
+        <h3 id="p-chesslens">ChessLens: chess game analytics platform</h3>
+        <p class="meta">React, Node.js, Express, Redis, BullMQ, Stockfish, Groq API</p>
+        <figure>
+          <img src="chesslens.webp" width="1200" height="600" loading="lazy" alt="ChessLens project cover: chess game analytics app with move-by-move Stockfish analysis, built by Balendra Singh">
+        </figure>
+        <p>ChessLens imports a player's games from Chess.com and Lichess and analyses every move with the Stockfish engine, showing evaluation bars, accuracy trends and opening performance across a 3,600-entry ECO opening database.</p>
+        <ul>
+          <li>Background analysis runs through a BullMQ and Redis job queue with a dedicated worker, with a synchronous fallback when the queue is unavailable.</li>
+          <li>A single persistent Stockfish process handles requests in order, and a heuristic engine sorts mistakes into seven weakness types for each player.</li>
+          <li>The Groq API explains blunders in plain language and builds an improvement plan, linked to a puzzle trainer drawn from the Lichess puzzle database.</li>
+        </ul>
+        <p class="links"><a href="https://chesslens2.duckdns.org/">Open live app</a><a href="https://github.com/Balendrasingh2210/ChessLens">View code on GitHub</a></p>
+      </article>
+
+      <article class="project" aria-labelledby="p-aiprep">
+        <h3 id="p-aiprep">AI Interview Prep: personalised interview reports</h3>
+        <p class="meta">MERN stack (React 19, Node.js, Express 5, MongoDB), Google Gemini API, Puppeteer</p>
+        <figure>
+          <img src="ai-interview-prep.webp" width="1200" height="600" loading="lazy" alt="AI Interview Prep project cover: MERN app that turns a resume and job description into an interview-prep report">
+        </figure>
+        <p>Upload a resume and a job description, and the app returns an interview-prep report in under 12 seconds: a match score, technical and behavioural questions, a skill-gap analysis and a preparation plan.</p>
+        <ul>
+          <li>JWT authentication with bcrypt password hashing, protected routes and token blacklisting on logout.</li>
+          <li>Generates ATS-friendly resumes as PDFs on the server with headless Chrome (Puppeteer).</li>
+          <li>Requests are validated with Zod and file uploads handled with Multer; the React and Vite frontend ships at 109 KB gzipped.</li>
+        </ul>
+        <p class="links"><a href="https://ai-interview-prep-seven-mocha.vercel.app">Open live app</a><a href="https://github.com/Balendrasingh2210/ai-interview-prep">View code on GitHub</a></p>
+      </article>
+
+      <article class="project" aria-labelledby="p-thesis">
+        <h3 id="p-thesis">Identity-preserving face-to-anime translation (M.Tech thesis, ongoing)</h3>
+        <p class="meta">PyTorch, computer vision, generative models</p>
+        <p>A PyTorch framework that turns photos of human faces into anime-style faces while keeping the person recognisable. It benchmarks U-GAT-IT and AnimeGANv3 on the Selfie2Anime dataset and evaluates identity with FID, KID, ArcFace, FaceNet, facial landmark metrics and cross-domain identity retrieval. Current results: FID 91.8 and KID 2.65 (×100).</p>
+      </article>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-h">
+      <h2 id="skills-h">Skills</h2>
+      <dl class="skills">
+        <dt>Languages</dt><dd>C++, C, Python, JavaScript, TypeScript</dd>
+        <dt>Frontend</dt><dd>React, Vite, React Router, Zustand</dd>
+        <dt>Backend</dt><dd>Node.js, Express.js, FastAPI, REST APIs, JWT</dd>
+        <dt>Data and queues</dt><dd>MongoDB, Redis, BullMQ</dd>
+        <dt>Tools</dt><dd>Git, GitHub Actions, Firebase Hosting</dd>
+        <dt>AI and ML</dt><dd>PyTorch, computer vision, LLM integration (Groq, OpenRouter, Google Gemini)</dd>
+        <dt>Problem solving</dt><dd>700+ problems on LeetCode, Codeforces, CodeChef and GeeksforGeeks; 49 contests</dd>
+      </dl>
+    </section>
+
+    <section id="education" aria-labelledby="education-h">
+      <h2 id="education-h">Education and certifications</h2>
+      <div class="entry">
+        <h3>M.Tech in Information Technology</h3>
+        <p>Indian Institute of Information Technology (IIIT), Allahabad</p>
+        <p class="when">2025–2027 · CGPA 8.00</p>
+      </div>
+      <div class="entry">
+        <h3>B.Tech in Electrical and Electronics Engineering</h3>
+        <p>JSS Academy of Technical Education, Noida</p>
+        <p class="when">2020–2024 · CGPA 7.15</p>
+      </div>
+      <div class="entry">
+        <h3>Machine Learning Specialization</h3>
+        <p>Coursera and DeepLearning.AI (Andrew Ng), March 2026, grade 100%. <a href="https://www.coursera.org/account/accomplishments/verify/ZKNWHTLZUBX1">Verify certificate</a></p>
+      </div>
+      <div class="entry">
+        <h3>The Complete Web Development Bootcamp</h3>
+        <p>Udemy (Dr. Angela Yu), October 2023, 63 hours. <a href="https://ude.my/UC-ea906493-e3e4-4103-a3a1-4da6fbd57340">Verify certificate</a></p>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Contact</h2>
+      <p>The fastest way to reach me is email. I usually reply within a day.</p>
+      <address>
+        <p><a href="mailto:Balendrasingh310813@gmail.com">Balendrasingh310813@gmail.com</a></p>
+        <p><a href="https://www.linkedin.com/in/balendra-singh-3b35751b8/">LinkedIn</a> · <a href="https://github.com/Balendrasingh2210">GitHub</a> · <a href="https://codolio.com/profile/Balendra22">Coding profiles on Codolio</a></p>
+        <p>Prayagraj, Uttar Pradesh, India</p>
+      </address>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Balendra Singh. Last updated 4 November 2026.</p>
+  </footer>
+</body>
+</html>
