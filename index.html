@@ -180,7 +180,8 @@
     .stat { padding: 26px 20px; border-left: 1px solid var(--rule); }
     .stat:first-child { border-left: 0; padding-left: 0; }
     .stat strong { display: block; font-family: var(--display); font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
-    .stat span { font-family: var(--display); font-size: .95rem; color: var(--muted); }
+    .stat > span { font-family: var(--display); font-size: .95rem; color: var(--muted); }
+    .stats .stats-note { display: block; padding-top: 0; border-top: 1px solid var(--rule); padding-top: 10px; font-family: var(--display); font-size: .85rem; color: var(--muted); margin: 0 auto; padding-bottom: 14px; }
     @media (max-width: 700px) {
       .stats .wrap { grid-template-columns: 1fr 1fr; }
       .stat { border-left: 0; padding: 18px 0; }
@@ -246,7 +247,10 @@
     .timeline li { position: relative; padding: 0 0 30px 40px; }
     .timeline li:last-child { padding-bottom: 0; }
     .timeline li::before { content: ""; position: absolute; left: 0; top: 7px; width: 16px; height: 16px; background: var(--paper-2); border: 2px solid var(--ink); border-radius: 3px; }
-    .timeline li.cert::before { background: var(--board-light); }
+    .certs { margin-top: 44px; padding-top: 22px; border-top: 1px solid var(--rule); }
+    .certs h3 { font-size: 1rem; font-weight: 700; color: var(--muted); margin-bottom: 8px; }
+    .certs ul { margin: 0; padding-left: 1.1em; font-size: 1rem; color: var(--ink-2); }
+    .certs li { margin-bottom: 4px; }
     .timeline h3 { font-size: 1.2rem; font-weight: 700; }
     .timeline p { margin: 2px 0; }
     .timeline .when { font-family: var(--display); font-size: .95rem; color: var(--muted); }
@@ -330,11 +334,12 @@
 
     <div class="stats" aria-label="Highlights">
       <div class="wrap">
-        <div class="stat"><strong data-count="700" data-suffix="+">700+</strong><span>DSA problems solved</span></div>
-        <div class="stat"><strong data-count="1784">1784</strong><span>LeetCode rating</span></div>
+        <div class="stat"><strong data-count="734" data-stat="total_solved">734</strong><span>DSA problems solved</span></div>
+        <div class="stat"><strong data-count="1719" data-stat="leetcode_rating">1719</strong><span>LeetCode rating (peak <span data-stat="leetcode_max_rating">1784</span>)</span></div>
         <div class="stat"><strong data-count="3">3</strong><span>Production apps shipped</span></div>
         <div class="stat"><strong data-count="8.00" data-dec="2">8.00</strong><span>M.Tech CGPA</span></div>
       </div>
+      <p class="wrap stats-note">Coding stats update daily from LeetCode, Codeforces, CodeChef and GeeksforGeeks. Last updated <span data-stat="updated_label">4 November 2026</span>.</p>
     </div>
 
     <section class="block" id="about" aria-labelledby="about-h">
@@ -342,7 +347,7 @@
         <div class="sec-head reveal"><h2 id="about-h">About me</h2><p>Backend-heavy web developer with a research side in computer vision.</p></div>
         <div class="sec-body about reveal">
           <p>I am in the 2025–2027 M.Tech IT batch at the Indian Institute of Information Technology, Allahabad (CGPA 8.00), after a B.Tech in Electrical and Electronics Engineering from JSS Academy of Technical Education, Noida.</p>
-          <p>Most of my work is backend-heavy web development: authentication, background job queues, and integrating third-party APIs and large language models into real products. Alongside that, I research identity-preserving face-to-anime image translation for my M.Tech thesis, and I have solved more than 700 data structures and algorithms problems.</p>
+          <p>Most of my work is backend-heavy web development: authentication, background job queues, and integrating third-party APIs and large language models into real products. Alongside that, I research identity-preserving face-to-anime image translation for my M.Tech thesis, and I have solved <span data-stat="total_solved">734</span> data structures and algorithms problems across LeetCode, Codeforces, CodeChef and GeeksforGeeks.</p>
           <p>I am open to software engineering, backend, full-stack and ML engineering roles in India, on-site, hybrid or remote.</p>
         </div>
       </div>
@@ -418,23 +423,18 @@
           <div class="skill-card reveal" style="--rd:.16s"><h3>Backend</h3><ul class="tags"><li>Node.js</li><li>Express.js</li><li>FastAPI</li><li>REST APIs</li><li>JWT</li></ul></div>
           <div class="skill-card reveal"><h3>Data and queues</h3><ul class="tags"><li>MongoDB</li><li>Redis</li><li>BullMQ</li></ul></div>
           <div class="skill-card reveal" style="--rd:.08s"><h3>AI and ML</h3><ul class="tags"><li>PyTorch</li><li>Computer vision</li><li>Groq</li><li>OpenRouter</li><li>Google Gemini</li></ul></div>
-          <div class="skill-card reveal" style="--rd:.16s"><h3>Tools and practice</h3><ul class="tags"><li>Git</li><li>GitHub Actions</li><li>Firebase Hosting</li><li>49 coding contests</li></ul></div>
+          <div class="skill-card reveal" style="--rd:.16s"><h3>Tools and practice</h3><ul class="tags"><li>Git</li><li>GitHub Actions</li><li>Firebase Hosting</li><li><span data-stat="contests">51</span> coding contests</li></ul></div>
         </div>
       </div>
     </section>
 
     <section class="block alt" id="education" aria-labelledby="education-h">
       <div class="wrap">
-        <div class="sec-head reveal"><h2 id="education-h">Education and certifications</h2><p>Most recent first.</p></div>
+        <div class="sec-head reveal"><h2 id="education-h">Education</h2><p>Most recent first.</p></div>
         <div class="sec-body">
           <div class="tl-wrap">
           <span class="fill" aria-hidden="true"></span>
           <ol class="timeline" reversed>
-            <li class="cert reveal">
-              <h3>Machine Learning Specialization</h3>
-              <p>Coursera and DeepLearning.AI (Andrew Ng), grade 100%. <a href="https://www.coursera.org/account/accomplishments/verify/ZKNWHTLZUBX1" data-track="certificate">Verify certificate</a></p>
-              <p class="when">March 2026</p>
-            </li>
             <li class="reveal">
               <h3>M.Tech in Information Technology</h3>
               <p>Indian Institute of Information Technology (IIIT), Allahabad · CGPA 8.00</p>
@@ -445,12 +445,15 @@
               <p>JSS Academy of Technical Education, Noida · CGPA 7.15</p>
               <p class="when">2020–2024</p>
             </li>
-            <li class="cert reveal">
-              <h3>The Complete Web Development Bootcamp</h3>
-              <p>Udemy (Dr. Angela Yu), 63 hours. <a href="https://ude.my/UC-ea906493-e3e4-4103-a3a1-4da6fbd57340" data-track="certificate">Verify certificate</a></p>
-              <p class="when">October 2023</p>
-            </li>
           </ol>
+          </div>
+
+          <div class="certs reveal" aria-labelledby="certs-h">
+            <h3 id="certs-h">Certifications</h3>
+            <ul>
+              <li>Machine Learning Specialization, Coursera and DeepLearning.AI, March 2026 · <a href="https://www.coursera.org/account/accomplishments/verify/ZKNWHTLZUBX1" data-track="certificate">Verify</a></li>
+              <li>The Complete Web Development Bootcamp, Udemy, October 2023 · <a href="https://ude.my/UC-ea906493-e3e4-4103-a3a1-4da6fbd57340" data-track="certificate">Verify</a></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -540,13 +543,13 @@
     /* Count-up stats */
     function countUp(el) {
       var end = parseFloat(el.dataset.count), dec = +(el.dataset.dec || 0), suf = el.dataset.suffix || '';
-      if (reduce) return;
+      if (reduce) { el.dataset.done = '1'; el.textContent = end.toFixed(dec) + suf; return; }
       var t0 = null, dur = 1400;
       function step(t) {
         if (!t0) t0 = t;
         var p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
         el.textContent = (end * e).toFixed(dec) + (p === 1 ? suf : '');
-        if (p < 1) requestAnimationFrame(step);
+        if (p < 1) requestAnimationFrame(step); else { el.dataset.done = '1'; el.textContent = parseFloat(el.dataset.count).toFixed(dec) + suf; }
       }
       requestAnimationFrame(step);
     }
@@ -590,6 +593,19 @@
     place();
     window.addEventListener('resize', place);
     if (!reduce) setTimeout(function hop() { k++; place(); setTimeout(hop, 1600); }, 1400);
+
+    /* Live coding stats: refreshed daily by a GitHub Action into stats.json */
+    fetch('stats.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (st) {
+      if (!st) return;
+      document.querySelectorAll('[data-stat]').forEach(function (el) {
+        var v = st[el.dataset.stat];
+        if (v === undefined || v === null) return;
+        if (el.hasAttribute('data-count')) {
+          el.dataset.count = v;
+          if (el.dataset.done) el.textContent = v;
+        } else { el.textContent = v; }
+      });
+    }).catch(function () {});
 
     /* Analytics: track clicks on project, contact and certificate links */
     document.addEventListener('click', function (e) {
