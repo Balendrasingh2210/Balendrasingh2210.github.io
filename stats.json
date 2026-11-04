@@ -1,9 +1,28 @@
 {
   "total_solved": 734,
-  "leetcode_rating": 1719,
-  "leetcode_max_rating": 1784,
-  "contests": 51,
+  "leetcode_rating": 1734,
+  "leetcode_max_rating": 1785,
+  "contests": 52,
   "updated": "2026-11-04",
   "updated_label": "4 November 2026",
-  "platforms": {}
+  "offset": null,
+  "platforms": {
+    "leetcode": {
+      "solved": 424,
+      "rating": 1734,
+      "max_rating": 1785,
+      "contests": 24
+    },
+    "codeforces": {
+      "solved": 34,
+      "rating": 893,
+      "max_rating": 951,
+      "contests": 10
+    },
+    "codechef": {
+      "solved": 75,
+      "rating": 1439,
+      "contests": 18
+    }
+  }
 }
