@@ -19,10 +19,11 @@ HANDLES = {
     "leetcode": "balendrasingh310813",
     "codeforces": "Harry22",
     "codechef": "harry_2210",
-    "gfg": "balendrasingh310813",
 }
+# GeeksforGeeks hides solved counts behind a sign-in, so it (with HackerRank and
+# CodeStudio) is part of the fixed offset below rather than fetched live.
 # Total shown on Codolio when this was set up (4 Nov 2026). Used once to compute an
-# offset for problems counted on platforms without an API (HackerRank, CodeStudio)
+# offset for problems on platforms without a public API (GFG, HackerRank, CodeStudio)
 # and for differences in how platforms count, so the total stays consistent.
 SEED_TOTAL = 734
 
@@ -78,21 +79,11 @@ def codechef():
             "contests": int(contests.group(1)) if contests else None}
 
 
-def gfg():
-    html = get(f"https://www.geeksforgeeks.org/user/{HANDLES['gfg']}/")
-    for pat in (r'"total_problems_solved"\s*:\s*"?(\d+)', r'"totalProblemsSolved"\s*:\s*"?(\d+)',
-                r"Problem Solved</div>\s*<div[^>]*>\s*(\d+)", r"Problems Solved[^0-9]{0,80}(\d+)"):
-        m = re.search(pat, html)
-        if m:
-            return {"solved": int(m.group(1))}
-    raise ValueError("GFG solved count not found")
-
-
 def main():
     old = json.loads(STATS.read_text()) if STATS.exists() else {}
     platforms = old.get("platforms", {})
     ok = {}
-    for name, fn in (("leetcode", leetcode), ("codeforces", codeforces), ("codechef", codechef), ("gfg", gfg)):
+    for name, fn in (("leetcode", leetcode), ("codeforces", codeforces), ("codechef", codechef)):
         try:
             fresh = fn()
             prev = platforms.get(name, {})
@@ -105,6 +96,7 @@ def main():
             print(f"{name}: FAILED ({e}); keeping {platforms.get(name)}", file=sys.stderr)
 
     live_sum = sum((platforms.get(p) or {}).get("solved") or 0 for p in HANDLES)
+    platforms.pop("gfg", None)
     offset = old.get("offset")
     if offset is None and all(ok.values()):
         offset = SEED_TOTAL - live_sum
