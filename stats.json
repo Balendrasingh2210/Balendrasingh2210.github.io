@@ -5,7 +5,7 @@
   "contests": 52,
   "updated": "2026-11-04",
   "updated_label": "4 November 2026",
-  "offset": null,
+  "offset": 201,
   "platforms": {
     "leetcode": {
       "solved": 424,
