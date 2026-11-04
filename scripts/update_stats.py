@@ -52,8 +52,9 @@ def leetcode():
     hist = [h["rating"] for h in (d.get("userContestRankingHistory") or []) if h.get("attended")]
     return {
         "solved": solved,
-        "rating": round(rk.get("rating") or 0),
-        "max_rating": round(max(hist)) if hist else round(rk.get("rating") or 0),
+        # LeetCode shows ratings truncated, not rounded (e.g. 1784.6 is shown as 1784)
+        "rating": int(rk.get("rating") or 0),
+        "max_rating": int(max(hist)) if hist else int(rk.get("rating") or 0),
         "contests": rk.get("attendedContestsCount") or 0,
     }
 
