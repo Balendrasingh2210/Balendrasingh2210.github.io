@@ -1,14 +1,14 @@
 {
-  "total_solved": 734,
+  "total_solved": 735,
   "leetcode_rating": 1734,
   "leetcode_max_rating": 1784,
   "contests": 52,
-  "updated": "2026-11-16",
-  "updated_label": "16 November 2026",
+  "updated": "2026-11-17",
+  "updated_label": "17 November 2026",
   "offset": 201,
   "platforms": {
     "leetcode": {
-      "solved": 424,
+      "solved": 425,
       "rating": 1734,
       "max_rating": 1784,
       "contests": 24
